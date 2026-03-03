@@ -1,6 +1,5 @@
 import 'package:book_store/core/constant/app_colors.dart';
 import 'package:book_store/core/helper/spacing.dart';
-import 'package:book_store/presentation/widgets/search_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,7 +28,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
     return Row(
       children: [
         Icon(Icons.book, size: 24, color: AppColors.primaryDark),
-        horizontalSpace(5),
+        horizontalSpace(10),
 
         Expanded(
           child: AnimatedSwitcher(
