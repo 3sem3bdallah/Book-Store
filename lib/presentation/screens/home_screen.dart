@@ -1,4 +1,5 @@
 import 'package:book_store/core/helper/spacing.dart';
+import 'package:book_store/presentation/widgets/best_seller_books.dart';
 import 'package:book_store/presentation/widgets/custom_app_bar.dart';
 import 'package:book_store/presentation/widgets/discovering_books.dart';
 import 'package:book_store/presentation/widgets/section_header.dart';
@@ -14,15 +15,37 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(16),
-          child: Column(
-            children: [
-              CustomAppBar(),
-              verticalSpace(25),
-              SectionHeader(title: 'Discover Books'),
-              verticalSpace(15),
-              DiscoveringBooks(),
-              verticalSpace(15),
-              SectionHeader(title: 'Best Seller'),
+          // child: Column(
+          //   children: [
+          //     CustomAppBar(),
+          //     verticalSpace(25),
+          //     const SectionHeader(title: 'Discover Books'),
+          //     verticalSpace(15),
+          //     const DiscoveringBooks(),
+          //     verticalSpace(15),
+          //     const SectionHeader(title: 'Best Seller'),
+          //     verticalSpace(15),
+          //     const BestSellerBooks(),
+          //   ],
+          // ),
+          child: CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                child: Column(
+                  children: [
+                    CustomAppBar(),
+                    verticalSpace(25),
+                    const SectionHeader(title: 'Discover Books'),
+                    verticalSpace(15),
+                    const DiscoveringBooks(),
+                    verticalSpace(15),
+                    const SectionHeader(title: 'Best Seller'),
+                    verticalSpace(15),
+                  ],
+                ),
+              ),
+
+              const BestSellerBooks(),
             ],
           ),
         ),
