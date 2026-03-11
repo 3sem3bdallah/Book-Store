@@ -1,6 +1,7 @@
 import 'package:book_store/core/constant/app_colors.dart';
 import 'package:book_store/core/constant/app_img.dart';
 import 'package:book_store/core/helper/spacing.dart';
+import 'package:book_store/core/utils/router_transitions.dart';
 import 'package:book_store/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -61,11 +62,9 @@ class OnboardingScreen extends StatelessWidget {
                     elevation: 0,
                   ),
                   onPressed: () {
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomeScreen(),
-                      ),
+                      RouterTransitions.buildScale(const HomeScreen()),
                     );
                   },
                   child: Text(
