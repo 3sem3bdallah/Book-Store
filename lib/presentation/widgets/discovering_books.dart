@@ -17,10 +17,9 @@ class DiscoveringBooks extends StatelessWidget {
             aspectRatio: 2 / 4,
             child: Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12.r),
                 image: const DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage('assets/images/testo.png'),
+                  image: AssetImage('assets/images/testimg.png'),
                 ),
               ),
             ),

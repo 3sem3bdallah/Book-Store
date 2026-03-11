@@ -12,10 +12,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
-  lottie: ^3.3.2
   carousel_slider: ^5.1.2
   flutter_screenutil: ^5.9.3
-  internet_connection_checker_plus: ^2.9.1+2
   font_awesome_flutter: ^10.12.0
 
 dev_dependencies:
@@ -30,4 +28,3 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/animation/

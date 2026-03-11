@@ -13,7 +13,7 @@ class BestSellerBooks extends StatelessWidget {
       itemCount: 10,
       itemBuilder: (BuildContext context, int index) {
         return Padding(
-          padding: EdgeInsets.symmetric(vertical: 8.h),
+          padding: EdgeInsets.symmetric(vertical: 4.h),
           child: SizedBox(
             height: 125.h,
             child: Row(

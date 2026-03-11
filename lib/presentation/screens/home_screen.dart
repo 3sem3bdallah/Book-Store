@@ -15,19 +15,6 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(16),
-          // child: Column(
-          //   children: [
-          //     CustomAppBar(),
-          //     verticalSpace(25),
-          //     const SectionHeader(title: 'Discover Books'),
-          //     verticalSpace(15),
-          //     const DiscoveringBooks(),
-          //     verticalSpace(15),
-          //     const SectionHeader(title: 'Best Seller'),
-          //     verticalSpace(15),
-          //     const BestSellerBooks(),
-          //   ],
-          // ),
           child: CustomScrollView(
             slivers: [
               SliverToBoxAdapter(
@@ -36,11 +23,11 @@ class HomeScreen extends StatelessWidget {
                     CustomAppBar(),
                     verticalSpace(25),
                     const SectionHeader(title: 'Discover Books'),
-                    verticalSpace(15),
+                    verticalSpace(10),
                     const DiscoveringBooks(),
-                    verticalSpace(15),
+                    verticalSpace(10),
                     const SectionHeader(title: 'Best Seller'),
-                    verticalSpace(15),
+                    verticalSpace(10),
                   ],
                 ),
               ),
