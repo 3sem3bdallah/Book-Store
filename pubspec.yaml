@@ -13,11 +13,13 @@ dependencies:
     sdk: flutter
 
   dio: ^5.9.2
+  get_it: ^9.2.1
+  dartz: ^0.10.1
   equatable: ^2.0.8
+  flutter_bloc: ^9.1.1
   slide_to_act: ^2.0.2
   flutter_screenutil: ^5.9.3
   font_awesome_flutter: ^10.12.0
-  dartz: ^0.10.1
 
 dev_dependencies:
 
