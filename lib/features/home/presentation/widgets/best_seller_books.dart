@@ -1,8 +1,8 @@
-import 'package:book_store/core/constant/app_colors.dart';
-import 'package:book_store/core/helper/spacing.dart';
-import 'package:book_store/core/utils/router_transitions.dart';
-import 'package:book_store/features/book_details/presentation/book_details_screen.dart';
-import 'package:book_store/core/widgets/book_rating.dart';
+import '../../../../core/constant/app_colors.dart';
+import '../../../../core/helper/spacing.dart';
+import '../../../../core/utils/router_transitions.dart';
+import '../../../book_details/presentation/book_details_screen.dart';
+import '../../../../core/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

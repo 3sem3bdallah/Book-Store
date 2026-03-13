@@ -1,5 +1,5 @@
-import 'package:book_store/core/constant/app_colors.dart';
-import 'package:book_store/core/widgets/custom_buttom.dart';
+import '../../../../core/constant/app_colors.dart';
+import '../../../../core/widgets/custom_buttom.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

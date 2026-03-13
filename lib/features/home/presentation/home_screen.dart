@@ -1,8 +1,8 @@
-import 'package:book_store/core/helper/spacing.dart';
-import 'package:book_store/features/home/presentation/widgets/best_seller_books.dart';
-import 'package:book_store/features/home/presentation/widgets/custom_app_bar.dart';
-import 'package:book_store/core/widgets/discovering_books.dart';
-import 'package:book_store/core/widgets/section_header.dart';
+import '../../../core/helper/spacing.dart';
+import 'widgets/best_seller_books.dart';
+import 'widgets/custom_app_bar.dart';
+import '../../../core/widgets/discovering_books.dart';
+import '../../../core/widgets/section_header.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {

@@ -1,11 +1,12 @@
-import 'package:book_store/core/helper/spacing.dart';
-import 'package:book_store/core/widgets/discovering_books.dart';
-import 'package:book_store/core/widgets/section_header.dart';
-import 'package:book_store/core/widgets/book_rating.dart';
-import 'package:book_store/features/book_details/presentation/widgets/books_action.dart';
-import 'package:book_store/features/book_details/presentation/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../core/helper/spacing.dart';
+import '../../../core/widgets/book_rating.dart';
+import '../../../core/widgets/discovering_books.dart';
+import '../../../core/widgets/section_header.dart';
+import 'widgets/books_action.dart';
+import 'widgets/custom_book_image.dart';
 
 class BookDetailsScreen extends StatelessWidget {
   const BookDetailsScreen({super.key});
@@ -21,7 +22,7 @@ class BookDetailsScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                verticalSpace(40),
+                verticalSpace(26),
                 const CustomBookImage(),
 
                 verticalSpace(24),

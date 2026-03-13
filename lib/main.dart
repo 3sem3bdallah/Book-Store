@@ -1,4 +1,4 @@
-import 'package:book_store/features/onboarding/presentation/onboarding_screen.dart';
+import 'features/onboarding/presentation/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

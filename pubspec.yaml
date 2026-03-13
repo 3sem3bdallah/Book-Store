@@ -9,12 +9,15 @@ environment:
   sdk: ^3.11.0
 
 dependencies:
-  cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
+
+  dio: ^5.9.2
+  equatable: ^2.0.8
   slide_to_act: ^2.0.2
   flutter_screenutil: ^5.9.3
   font_awesome_flutter: ^10.12.0
+  dartz: ^0.10.1
 
 dev_dependencies:
 
