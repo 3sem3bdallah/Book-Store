@@ -2,9 +2,10 @@ import 'package:book_store/core/constant/app_colors.dart';
 import 'package:book_store/core/constant/app_img.dart';
 import 'package:book_store/core/helper/spacing.dart';
 import 'package:book_store/core/utils/router_transitions.dart';
-import 'package:book_store/presentation/screens/home_screen.dart';
+import 'package:book_store/features/home/presentation/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:slide_to_act/slide_to_act.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -50,32 +51,17 @@ class OnboardingScreen extends StatelessWidget {
               const Spacer(),
 
               /// Get Started Button
-              SizedBox(
-                width: double.infinity,
-                height: 52.h,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primaryDark,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16.r),
-                    ),
-                    elevation: 0,
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      RouterTransitions.buildScale(const HomeScreen()),
-                    );
-                  },
-                  child: Text(
-                    "Get Started",
-                    style: TextStyle(
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
+              SlideAction(
+                text: "Get Started",
+                innerColor: AppColors.primary,
+                outerColor: AppColors.primaryDark,
+                onSubmit: () {
+                  Navigator.push(
+                    context,
+                    RouterTransitions.buildScale(const HomeScreen()),
+                  );
+                  return null;
+                },
               ),
 
               verticalSpace(24),
