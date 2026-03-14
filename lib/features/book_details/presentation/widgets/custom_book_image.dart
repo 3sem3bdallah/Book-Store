@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomBookImage extends StatelessWidget {
-  const CustomBookImage({super.key});
+  final String? imageUrl;
 
+  const CustomBookImage({super.key, required this.imageUrl});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,9 +19,9 @@ class CustomBookImage extends StatelessWidget {
             offset: const Offset(0, 10),
           ),
         ],
-        image: const DecorationImage(
+        image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage('assets/images/testo.png'),
+          image: NetworkImage(imageUrl ?? 'https://via.placeholder.com/150'),
         ),
       ),
     );

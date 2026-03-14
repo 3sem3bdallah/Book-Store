@@ -33,9 +33,13 @@ class ServerFailure extends Failure {
       case DioExceptionType.unknown:
         return ServerFailure('Opps There was an Error, Please try again');
       case DioExceptionType.badCertificate:
-        throw UnimplementedError();
+        return ServerFailure(
+          'Secure connection failed, Please try again later',
+        );
       case DioExceptionType.connectionError:
-        throw UnimplementedError();
+        return ServerFailure(
+          'Connection error with ApiServer, Please check your internet and try again',
+        );
     }
   }
 

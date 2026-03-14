@@ -8,16 +8,23 @@ sealed class NewestBooksState extends Equatable {
 }
 
 final class NewestBooksInitial extends NewestBooksState {}
+
 final class NewestBooksLoading extends NewestBooksState {}
 
 class NewsetBooksSuccess extends NewestBooksState {
   final List<BookModel> books;
 
   const NewsetBooksSuccess(this.books);
+
+  @override
+  List<Object> get props => [books];
 }
 
-class NewsetBooksFailure extends NewestBooksState {
+class NewestBooksFailure extends NewestBooksState {
   final String errMessage;
 
-  const NewsetBooksFailure(this.errMessage);
+  const NewestBooksFailure(this.errMessage);
+
+  @override
+  List<Object> get props => [errMessage];
 }

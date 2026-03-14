@@ -1,8 +1,12 @@
-import 'features/onboarding/presentation/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'core/utils/service_locator.dart';
+import 'features/onboarding/presentation/onboarding_screen.dart';
+
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  setupServiceLocator();
   runApp(const MyApp());
 }
 
@@ -17,11 +21,11 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (_, child) {
         return MaterialApp(
-          theme: ThemeData.light(),
-          debugShowCheckedModeBanner: false,
-          home: OnboardingScreen(),
+            theme: ThemeData.light(),
+            debugShowCheckedModeBanner: false,
+            home: OnboardingScreen(),
         );
-      },
+      }
     );
   }
 }

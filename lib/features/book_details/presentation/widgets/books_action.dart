@@ -1,13 +1,19 @@
+import '../../../home/data/models/book_model.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/widgets/custom_buttom.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BooksAction extends StatelessWidget {
-  const BooksAction({super.key});
+  const BooksAction({super.key, required this.book});
+
+  final BookModel book;
 
   @override
   Widget build(BuildContext context) {
+    final priceLabel = _priceLabel();
+    final previewLabel = _previewLabel();
+
     return SizedBox(
       height: 50.h,
       child: Row(
@@ -15,7 +21,7 @@ class BooksAction extends StatelessWidget {
           Expanded(
             child: CustomButton(
               fontSize: 16.sp,
-              text: '16.55€',
+              text: priceLabel,
               backgroundColor: AppColors.bg,
               textColor: AppColors.primaryDark,
               borderRadius: BorderRadius.only(
@@ -27,7 +33,7 @@ class BooksAction extends StatelessWidget {
           Expanded(
             child: CustomButton(
               fontSize: 16.sp,
-              text: 'Free Preview',
+              text: previewLabel,
               backgroundColor: AppColors.primary,
               textColor: Colors.white,
               borderRadius: BorderRadius.only(
@@ -39,5 +45,21 @@ class BooksAction extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String _priceLabel() {
+    if (book.saleInfo?.isEbook == true) {
+      return 'Free';
+    }
+
+    return 'Not for sale';
+  }
+
+  String _previewLabel() {
+    if ((book.volumeInfo.previewLink ?? '').isNotEmpty) {
+      return 'Free Preview';
+    }
+
+    return 'Details';
   }
 }

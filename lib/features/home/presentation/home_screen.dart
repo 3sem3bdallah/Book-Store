@@ -1,7 +1,7 @@
-import 'package:book_store/core/utils/service_locator.dart';
-import 'package:book_store/features/home/data/repo/home_repo_impl.dart';
-import 'package:book_store/features/home/presentation/cubit/featured_books/featured_books_cubit.dart';
-import 'package:book_store/features/home/presentation/cubit/newest_books/newest_books_cubit.dart';
+import '../../../core/utils/service_locator.dart';
+import '../data/repo/home_repo.dart';
+import 'cubit/featured_books/discoverd_books_cubit.dart';
+import 'cubit/newest_books/newest_books_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/helper/spacing.dart';
@@ -16,41 +16,50 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => FeaturedBooksCubit(getIt.get<HomeRepoImpl>()),
-        ),
-        BlocProvider(
-          create: (context) => NewestBooksCubit(getIt.get<HomeRepoImpl>()),
-        ),
-      ],
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.all(16),
-            child: CustomScrollView(
-              slivers: [
-                SliverToBoxAdapter(
-                  child: Column(
-                    children: [
-                      CustomAppBar(),
-                      verticalSpace(25),
-                      const SectionHeader(title: 'Discover Books'),
-                      verticalSpace(10),
-                      const DiscoveringBooks(),
-                      verticalSpace(10),
-                      const SectionHeader(title: 'Best Seller'),
-                      verticalSpace(10),
-                    ],
-                  ),
-                ),
-
-                const BestSellerBooks(),
-              ],
-            ),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => DiscoverdBooksCubit(getIt<HomeRepo>()),
           ),
+          BlocProvider(
+            create: (context) => NewestBooksCubit(getIt<HomeRepo>()),
+          ),
+        ],
+        child: const HomeViewBody(),
+      ),
+    );
+  }
+}
+
+class HomeViewBody extends StatelessWidget {
+  const HomeViewBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.all(16),
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: Column(
+                children: [
+                  CustomAppBar(),
+                  verticalSpace(25),
+                  const SectionHeader(title: 'Discover Books'),
+                  verticalSpace(10),
+                  const DiscoveringBooks(),
+                  verticalSpace(10),
+                  const SectionHeader(title: 'Best Seller'),
+                  verticalSpace(10),
+                ],
+              ),
+            ),
+
+            const BestSellerBooks(),
+          ],
         ),
       ),
     );
